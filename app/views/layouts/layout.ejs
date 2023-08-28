@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Today - insanXYZ</title>
+    <link rel="stylesheet" href="css/output.css">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+</head>
+<body class="overflow-x-hidden">
+    <div class="loading fixed w-screen h-screen top-0 left-0 flex justify-center items-center z-10 bg-white hidden">
+        <div class="flex flex-col items-center gap-2">
+            <img src="images/loading.svg" alt="images" class="w-20">
+            <p class="text-lg font-semibold font-hindMaduraiRegular">Tunggu</p>
+        </div>
+    </div>
+    <div class="w-screen h-screen flex justify-center relative z-0">
+        <div class="w-2/3 h-screen min-w-[890px]">
+            <div class="w-full flex justify-between items-center py-2">
+                <div class="text-3xl font-montserrat">News today</div>
+                <a href="https://github.com/insanXYZ" target="_blank">
+                    <img src="images/github.png" alt="images" class="w-11">
+                </a>
+            </div>
+            <div class="flex justify-between py-2">
+                <a href="news?category=business" class="py-1 px-4 bg-stone-600 transition rounded-full text-white hover:bg-stone-300">Bisnis</a>
+                <a href="news?category=entertainment" class="py-1 px-4 bg-stone-600 transition rounded-full text-white hover:bg-stone-300">Entertainment</a>
+                <a href="news?category=health" class="py-1 px-4 bg-stone-600 transition rounded-full text-white hover:bg-stone-300">Kesehatan</a>
+                <a href="news?category=science" class="py-1 px-4 bg-stone-600 transition rounded-full text-white hover:bg-stone-300">Sains</a>
+                <a href="news?category=sports" class="py-1 px-4 bg-stone-600 transition rounded-full text-white hover:bg-stone-300">Olahraga</a>
+                <a href="news?category=technology" class="py-1 px-4 bg-stone-600 transition rounded-full text-white hover:bg-stone-300">Teknologi</a>
+            </div>
+            <%- body %>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

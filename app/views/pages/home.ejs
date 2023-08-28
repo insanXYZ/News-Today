@@ -1,0 +1,58 @@
+<div class="flex gap-5 mt-5 pb-10">
+    <div class="w-2/3 flex flex-col gap-5">
+        <a href="<%- news[0].url %>" class="group relative overflow-hidden" target="_blank">
+            <img src="https://source.unsplash.com/700x400?<%- news[0].url %>" alt="images" class="rounded shadow-sm group-hover:scale-110 transition">
+            <div class="absolute bottom-2 left-2 ">
+                <div class="font-hindMaduraiBold text-white text-xs">  <%- (new Date(news[0].publishedAt)).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' }) %>
+                </div>
+                <div class="font-hindMaduraiBold text-white text-2xl line-clamp-2"><%- news[0].title %></div>
+            </div>
+        </a>
+        <hr>
+        <div class="font-hindMaduraiRegular text-stone-600 text-lg font-semibold">News Feed </div>
+        <div class="flex flex-col gap-3">
+            <% for( let index = 1; index <= 2; index++ ) { %>
+                <a href="<%- news[index].url %>" target="_blank" class="w-full rounded flex shadow-md items-center">
+                    <div class="w-3/4 p-2 line-clamp-2">
+                        <%- news[index].title %>
+                    </div>
+                    <img src="https://source.unsplash.com/700x400?<%- news[index].url %>" alt="" class="w-1/4">
+                </a>
+            <% } %>
+        </div>
+        <hr>
+        <div class="flex justify-between">
+            <div class="font-hindMaduraiRegular text-stone-600 text-lg font-semibold">Rekomendasi untuk anda</div>
+            <a href="/rekomendasi" class="font-hindMaduraiRegular text-blue-400 text-lg font-semibold">Lihat semua </a>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+            <% for( let index = 3; index <= 6; index++ ) { %>
+                <a href="<%- news[index].url %>" target="_blank" class="bg-red-200 relative group overflow-hidden">
+                    <img src="https://source.unsplash.com/700x400?<%- news[index].url %>" class="group-hover:scale-110 transition" alt="image">
+                    <div class="absolute bottom-1 left-1">
+                        <div class="font-hindMaduraiRegular text-white text-xs"><%- (new Date(news[index].publishedAt)).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' }) %></div>
+                        <div class="line-clamp-2 text-white"><%- news[index].title %></div>
+                    </div>
+                </a>
+            <% } %>
+        </div>
+    </div>
+    <div class="w-1/3 flex flex-col gap-5 items-center">
+        <div class="flex flex-col items-center py-4 gap-2 bg-stone-600 rounded w-full">
+            <img src="https://avatars.githubusercontent.com/u/128870987?v=4" alt="images" class="w-20 rounded-full">
+            <a href="https://github.com/insanXYZ" class="font-semibold text-white">insanXYZ</a>
+        </div>
+        <div class="bg-stone-600 rounded text-center py-4 px-1 text-white">
+            News Today merupakan sebuah projek website open source yang dapat diakses secara gratis dengan mengunduhnya dengan <a href="https://github.com/insanXYZ/News-Today.git" class="underline" target="_blank">menekan ini,</a> Berisi tentang berita yang terjadi di indonesia dengan integrasi API dari <a target="_blank" class="underline" href="https://newsapi.org/">newsapi.org</a>
+        </div>
+        <% for( let index = 7; index <= 10; index++ ) { %>
+            <a href="<%- news[index].url %>" target="_blank" class="bg-red-200 relative overflow-hidden group">
+                <img src="https://source.unsplash.com/700x400?<%- news[index].url %>" class="group-hover:scale-110 transition" alt="image">
+                <div class="absolute bottom-1 left-1">
+                    <div class="font-hindMaduraiRegular text-white text-xs"><%- (new Date(news[index].publishedAt)).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' }) %></div>
+                    <div class="line-clamp-2 text-white font-semibold"><%- news[index].title %></div>
+                </div>
+            </a>
+        <% } %>
+    </div>
+</div>

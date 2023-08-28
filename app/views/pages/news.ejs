@@ -1,0 +1,22 @@
+<div class="flex justify-between items-center">
+    <a href="/" class="flex items-center gap-2 w-10 m-5">
+        <img src="images/back.png" class="w-7">
+        <div class="font-hindMaduraiRegular text-xl">Beranda</div>
+    </a>
+    <% if (category) { %>
+        <div class="font-hindMaduraiBold text-xl">
+            category: <%- category %>
+        </div>
+    <% } %>
+</div>
+<div class="flex flex-col gap-7 pb-10">
+    <% news.forEach(element => { %>
+        <a href="<%- element.url %>" class="w-full flex items-center gap-4 rounded shadow-md">
+            <img src="https://source.unsplash.com/700x400?<%- element.url %>" alt="image" class="w-1/4 rounded-l">
+            <div class="flex flex-col">
+                <div class="text-sm font-hindMaduraiRegular text-stone-600"><%- element.author %>  <%- (new Date(element.publishedAt)).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' }) %></div>
+                <div class="line-clamp-2 font-hindMaduraiRegular text-lg"><%- element.title %> </div>
+            </div>
+        </a>
+    <% }) %>
+</div>
